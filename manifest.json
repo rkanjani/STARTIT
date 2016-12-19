@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "Getting started example",
-  "description": "This extension shows a Google Image search result for the current page",
+  "name": "STARTIT",
+  "description": "Start working and stop wasting time trying to create a document/spreadsheet/slidedeck again!",
   "version": "1.0",
 
   "browser_action": {
