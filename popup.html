@@ -1,26 +1,31 @@
-<html>
+<html ng-app="startItApp">
   <head>
-    <title>STARTIT</title>
+    <title>startit</title>
 
     <link rel="stylesheet" href="popup.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/boostrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 
-    <script src="bower_components/bootstrap/dist/js/boostrap.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="popup.js"></script>
   </head>
-  <body>
+  <body ng-controller="StartItController">
 
     <div class="container">
 
         <div id="logo" class="header">
-          
+          start it
 
         </div>
 
         <div id="links" class="body">
             
-
+          <div ng-repeat="link in start_links" class="display-link" ng-click="redirect($index)">
+                <img class="link-icon" src="{{link.icon}}">
+                <p class="link-title">{{link.name}}</p>
+          </div>
 
 
         </div>

@@ -1,3 +1,42 @@
+var startItApp = angular.module('startItApp', []);
+
+startItApp.config(['$compileProvider', function ($compileProvider) {
+    $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|local|data|chrome-extension):/);
+}]);
+
+// Define the `PhoneListController` controller on the `phonecatApp` module
+startItApp.controller('StartItController', function StartItController($scope) {
+  window.$scope = $scope;
+
+  $scope.start_links = {
+    "0":{
+      icon: chrome.extension.getURL("img/docs_logo.png"),
+      name: "Docs",
+      url: "https://docs.google.com/document/u/0/"
+    },
+    "1":{
+      icon: chrome.extension.getURL("img/sheets_logo.png"),
+      name: "Sheets",
+      url: "https://docs.google.com/spreadsheets/u/0/"
+    },
+    "2":{
+      icon: chrome.extension.getURL("img/slides_logo.png"),
+      name: "Slides",
+      url: "https://docs.google.com/presentation/u/0/"
+    }
+  }
+
+
+  $scope.redirect = function(index){
+    var url = $scope.start_links[index].url;
+
+    chrome.tabs.update({url: url});
+  }
+
+
+});
+
+/*
 // Copyright (c) 2014 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -8,6 +47,7 @@
  * @param {function(string)} callback - called when the URL of the current tab
  *   is found.
  */
+ /*
 function getCurrentTabUrl(callback) {
   // Query filter to be passed to chrome.tabs.query - see
   // https://developer.chrome.com/extensions/tabs#method-query
@@ -54,6 +94,8 @@ function getCurrentTabUrl(callback) {
  * @param {function(string)} errorCallback - Called when the image is not found.
  *   The callback gets a string that describes the failure reason.
  */
+
+ /*
 function getImageUrl(searchTerm, callback, errorCallback) {
   // Google image search - 100 searches per day.
   // https://developers.google.com/image-search/
@@ -116,3 +158,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+*/
