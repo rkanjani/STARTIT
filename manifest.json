@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
 
-  "name": "startit: start working without the delay",
-  "description": "Need to get to work on your Google document? Let us help you startit.",
-  "version": "1.0",
+  "name": "startit: google docs quick starter",
+  "description": "A simple extension to make it easier to create a new Google document.",
+  "version": "1.2",
   "icons": { "128": "img/logo.png" },
   "web_accessible_resources": ["img/logo.png", "img/docs_logo.png", "img/sheets_logo.png", "img/slides_logo.png"],
   "browser_action": {
